@@ -6,7 +6,6 @@ from fractals import LSystem
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-app.secret_key = '1234'
 app.config.update(
     SEND_FILE_MAX_AGE_DEFAULT=0
 )
@@ -46,4 +45,4 @@ def get_lsystem(initial_state, productions, number_of_steps):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
