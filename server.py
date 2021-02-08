@@ -6,9 +6,6 @@ from fractals import LSystem
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-app.config.update(
-    SEND_FILE_MAX_AGE_DEFAULT=0
-)
 
 
 @app.route('/', methods=['GET', 'POST'])
