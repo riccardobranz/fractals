@@ -18,7 +18,7 @@ def home():
     form = Drawing()
     
     if request.method == 'GET':
-        return render_template('index.html', form=form)
+        return render_template('drawing.html', form=form)
     
     else:
         initial_state, productions, number_steps, angle = form.initial_state.data, form.productions.data, form.number_steps.data, form.angle.data
