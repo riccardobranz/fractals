@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, send_from_directory, request
 from flask_bootstrap import Bootstrap
 from forms import Drawing
@@ -6,6 +7,10 @@ from fractals import LSystem
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
+app.secret_key = os.environ.get('secret_key')
+app.config.update(
+    SEND_FILE_MAX_AGE_DEFAULT=0
+)
 
 
 @app.route('/', methods=['GET', 'POST'])
